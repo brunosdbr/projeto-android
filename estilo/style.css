@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf'); format('opentype');/*TEM QUE SE COLOCAR DOIS PONTOS(..) ANTES DE /fonte..., PARA INDICAR A QUANTIDADE DE PASTAS QUE ESTA A FONTE, CADA PONTO É UMA SUBPASTA, OU, VOLTE UMA PASTA E ABRA A PASTA ANTERIOR, UM PONTO VOLTE UMA PASTA DOIS PONTOS ABRA A PASTA ANTERIOR */
+    font-weight: normal;
+}
+
+/*A BAIXO VEREMOS VARIAVEIS EM CSS*/
+
+:root{/*O ':root' SERVE COMO SE FOSSE A ARVORE PRINCIPAL DO MEU CÓDIGO, ONDE, QUANDO USADO DENTRO DO CSS, É POSSIVEL DE CLARAR AS VÁRIAVEIS*/
+    --cor0: #ebe5c5 ; /* OS DOIS TRAÇOS ('--') ANTES DO NOME cor01 É A DECLARAÇÃO DA VARIÁVEL*/
+    --cor1: #83e1ad ;
+    --cor2: #3ddc84 ;
+    --cor3: #2fa866 ;
+    --cor4: #1a5c37 ;
+    --cor5: #063d1e ;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, Sans-Serif;
+    --fonte-destaque: 'Bebas Neue', 'cursive';
+    --fonte-android: 'Android', 'cursive';
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #c5ebd6;
+    font-family: var(--fonte-padrao);
+}
+a.externo::after{
+    content: '\00A0\1F517';
+}
+header{
+    background-color: var(--cor4);
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;/*SERVE PAR AQUE O 'H1' NÃO FIQUE TÃO COLOCADO COM O TOPO DO ' HEADER'*/
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor5));
+}
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;/*SERVE PARA COLOCAR UM MARGEM A BAIXO DO 'H1'*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.452);
+}
+header > p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;/*SERVE PARA ALMENTAR O TAMANHO DA FONTE, COM A UNIDADE DE MEDIDA 'EM'*/
+    color: white;
+    max-width: 600px;/*FOI COLOCADAO PARA LIMITRAR ATÉ ONDE O PARÁGRAFO IRIA QUEBRAR QUANDO DIMINUISSE ATELA*/
+    padding-right: 10px;/*FOI COLOCADO PRA QUANDO DIMINUIR A TELA OS CANTOS NÃO FICASSEM MUITO ENCOSTADO NA TELA*/
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.452);
+}
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.397);/*essa sombra foi colocada pra ter uma sencação de ser uma sombra do header, porem é do nav*/
+}
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 13px;/*FOI COLOCADO PARA ARREDONDAR A BORDA DO LINK*/
+    text-decoration: none;
+    transition-duration: 0.5s;/*SERVE PARA QUNADO FIZER A TRANSIÇÃO AO PASAR O MOUSE POR CIMA DE UM LINK PAR AO OUTRO DEMORE , NESSE CASO, CINCO SEGUNDOS*/
+    font-size: bold;
+}
+nav > a:hover{ /*ESSE HOVER É PARA QUANDO PASSAR O MOUSE POR CIMA DO MENU FAZER COM QUE O LINK MUDE DE COR*/
+    background-color: var(--cor3);
+    color: var(--cor4);
+}
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;/*SERVE PARA QUANDO ESTIVER VENDO EM TELA GRANDE ELA NÃO CRESCER*/
+    margin-bottom: 30px;/*SERVE PARA ALTERAR A PARTE DE BAIXO DA MARGIM*/
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.452);
+    border-bottom-left-radius: 10px ;/*SERVE PARA COLOCAR BORDAS INDIVIDUAIS, NESSE CASO FOI A BORDA INFERIOR DIREITA*/
+    border-bottom-right-radius: 10px;/*SERVE PARA COLOCAR BORDAS INDIVIDUAIS, NESSE CASO FOI A BORDA INFERIOR ESQUERDA*/
+}
+main h1 {
+    font-family: var(--fonte-android);
+    color: var(--cor5);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+main h2 {
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    text-indent: 10px;
+}
+main p { /*QUANDO UMA TAG ESTA DENTRO DA OUTRA E NÃO SE USA O SINAL DE MAIO QUE'>' SIGNIFICA QUE UM ESTA DENTRO DSO OUTRO EM QUALQUER NÍVEL*/
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;/*SERVE PARA DAR UM RECUO NA PRIMEIRA LINHA DO PARÁGRAFO*/
+    font-size: 1em;
+    line-height: 2em;/*SERVE PARA COLOCAR UMA ALTURA ENTRE AS LINAS*/
+}
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+}
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor4);
+}
+main img{
+    width: 100%;/*SERVE PARA QUE AS IMAGENS SE ESPREMAS E SE ADAPTEM*/
+}
+main img.pequena{ /*FOI COLOCADA UMA 'class' DENRO DA IMAGEM, PARA DIMINUIR A PROPORÇÃO DA IMAGEM*/
+    max-width: 350px;
+    display: block;/*É COLOCADO UM 'DISPLA: BLOCK;' POIS A IMAGEM POR PADRÃO NÃO É UMA CAIXA, OU UM BLOCO, ENTÃO O DISPLAY; BLOCK TORNA ELA UMA CAIXA*/
+    margin: auto;/* E O MARGIN: AUTO É PARA COLOCAR O BLOCO CENTRALIZADO*/
+}
+div.video{
+    background-color: var(--cor5);
+    margin: 0px -20px 30px ;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281);
+}
+aside > h3 {
+    background-color: var(--cor4);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /*O SINAL DE NEGATIVO SERVE PARA A BORDAR CRESCER PARA FORA, OU SEJA, AUMENTAR PARA FORA*/
+    border-radius: 10px 10px 0px 0px;/* E COMPLEMENTANDO COM O 'border-radius' FAZ A IMPRESSÃO QUE H3 E O ASSIDE PAZEM PARTE DE UMA COISA SÓ*/
+}
+aside > ul {
+    list-style-type: '\2714\00A0';/*ESSE PARAMETRO É PAA MUDAR O ICONE DA LISTA, NESSE CASO FOI USADO O CÓDIGO DO EMOJI '2714' ACOMPANHADO DE UMA BARRA PARA A ESQUERDA, PARA PODER RECONHECER O CODIGO DO EMOJI, E O '00A0' SERVE PARA COLOCAR UM ESPAÇO ENTRE O ICONE DA LISTA E O NOME NA LISTA*/
+    list-style-position: inside;/* SERVE PARA COLOCAR OS ICONES DA LISTA DENTRO BOX-LEVEL */
+    columns: 2;/*SERVE PARA DIVIDIR A LISTA EM DUAS COLUNAS*/
+}
+footer{
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+footer > p > a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
